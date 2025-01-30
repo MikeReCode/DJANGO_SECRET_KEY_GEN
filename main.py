@@ -20,7 +20,7 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
-def read_root():
+def get_homepage():
     return FileResponse("templates/index.html")
 
 
