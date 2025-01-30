@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Key Generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Django Key Generator</h1>
+        <div class="output-container">
+            <div id="key-output" class="output">Your key will appear here.</div>
+            <button class="copy-button" onclick="copyKey()">Copy</button>
+        </div>
+        <div class="form-container">
+            <input 
+                id="key-length" 
+                class="length-input" 
+                type="number"
+                min="1" 
+                max="1000" 
+                value="20" 
+                placeholder="Enter key length"
+            >
+            <button
+                id="custom-url-call"
+                class="generate-button"
+                hx-post=""
+                hx-target="#key-output"
+                hx-swap="innerHTML"
+                >
+                
+                Generate Key
+            </button>
+        </div>
+    </div>
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
